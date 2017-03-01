@@ -26,12 +26,9 @@ public class TurnCommand implements RoverCommand {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-
         TurnCommand that = (TurnCommand) o;
-
         if (!rov.equals(that.rov)) return false;
         return curDir == that.curDir;
-
     }
 
     @Override

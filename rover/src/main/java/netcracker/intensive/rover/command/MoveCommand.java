@@ -9,7 +9,6 @@ public class MoveCommand implements RoverCommand {
         rov = r;
     }
 
-
     @Override
     public void execute() {
         rov.move();

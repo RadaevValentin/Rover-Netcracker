@@ -29,13 +29,14 @@ public class LoggingCommand implements RoverCommand {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
         LoggingCommand that = (LoggingCommand) o;
-
         return rCom.equals(that.rCom);
-
     }
 
     @Override

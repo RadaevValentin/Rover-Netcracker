@@ -33,12 +33,12 @@ public class Ground extends GroundCell{
             }
         }
         else {
-            throw new java.lang.IllegalArgumentException("Wrong number of Cells. Fulfill empty cells.");
+            throw new java.lang.IllegalArgumentException("Неверное чисо клеток. Заполните недостающие.");
         }
         for (int i = 0; i < getWidth(); i++) {
             for (int j = 0; j < getLength(); j++) {
                 if (landscape[i][j].equals(null)) {
-                    throw new java.lang.IllegalArgumentException("Wrong number of Cells. Fulfill empty cells.");
+                    throw new java.lang.IllegalArgumentException("Неверное чисо клеток. Заполните недостающие.");
                 }
             }
         }
@@ -49,7 +49,7 @@ public class Ground extends GroundCell{
             return landscape[x][y];
         }
         else {
-            throw new OutOfGroundException("Wrong coordinates. Out of ground boundaries");
+            throw new OutOfGroundException("Неправильные координаты. Выход за границы поля.");
         }
     }
     public void setCell(int a, int b, GroundCell cell ) {

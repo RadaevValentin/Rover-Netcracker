@@ -14,13 +14,7 @@ public class SimpleRoverStatsModule implements RoverStatsModule {
     public boolean isVisited(Point point){
         return statList.contains(point);
     }
-
     public Collection<Point> getVisitedPoints(){
         return statList;
-    }
-    public void printStat() {
-        for (Point point : statList) {
-            System.out.println(statList.indexOf(point) + " location is: Width is " + point.getX() + "; Length is " + point.getY());
-        }
     }
 }

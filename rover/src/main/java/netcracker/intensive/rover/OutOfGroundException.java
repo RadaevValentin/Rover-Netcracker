@@ -6,5 +6,6 @@ package netcracker.intensive.rover;
 public class OutOfGroundException extends Exception {
     public OutOfGroundException(String message){
         System.out.println(message);
+        this.printStackTrace();
     }
 }

@@ -18,19 +18,15 @@ public class RoverCommandParser {
 
     private ProgrammableRover rov;
     private String file;
-    private RoverProgram roverProgram;
     Map<String, Object> conf;
     List<RoverCommand> com;
-    File fileParse;
 
-    public RoverCommandParser(ProgrammableRover rover, String file)
-    {
+    public RoverCommandParser(ProgrammableRover rover, String file) {
         rov = rover;
         this.file = file;
     }
 
-    public RoverProgram getProgram()
-    {
+    public RoverProgram getProgram() {
         ArrayList<String> list = new ArrayList<>();
         String s;
         try(BufferedReader reader = new BufferedReader(new FileReader(URLDecoder.decode(this.getClass().getResource(file).getFile(), "UTF-8")))) {
@@ -41,16 +37,15 @@ public class RoverCommandParser {
                 }
             }
         }
-        catch(Exception e)
-        {
+        catch(Exception e) {
+            e.printStackTrace();
             throw new RoverCommandParserException(e);
+
         }
         conf = new HashMap<>();
         com = new ArrayList<>();
-        for (int f = 0; f < list.size(); f++)
-        {
-            if (list.get(f).equals(SEPARATOR))
-            {
+        for (int f = 0; f < list.size(); f++) {
+            if (list.get(f).equals(SEPARATOR)) {
                 int y = 0, u = f + 1;
                 while (y < f)
                 {
@@ -93,7 +88,8 @@ public class RoverCommandParser {
                                 break;
                         }
                         u++;
-                    } else {
+                    }
+                    else {
                         if (conf.get(LOG).equals(false)) {
                             switch (list.get(u).toUpperCase()) {
                                 case MoveCommand.MOVE:
@@ -115,6 +111,6 @@ public class RoverCommandParser {
                 }
             }
         }
-        return roverProgram = new RoverProgram(conf, com);
+        return new RoverProgram(conf, com);
     }
 }

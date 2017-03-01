@@ -7,6 +7,6 @@ package netcracker.intensive.rover.programmable;
  */
 public class RoverCommandParserException extends RuntimeException {
     public RoverCommandParserException(Exception e){
-        super("New RCP Exception:" + e);
+        super("New RoverCommandParserException Exception:", e);
     }
 }

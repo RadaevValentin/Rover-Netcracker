@@ -31,6 +31,7 @@ public class Rover implements Moveable, Liftable, Landable, Turnable{
             curPoint.setPoint(cur.getX(), cur.getY());
         }
         catch(OutOfGroundException e){
+            lift();
             e.getMessage();
             e.printStackTrace();
         }
@@ -110,7 +111,7 @@ public class Rover implements Moveable, Liftable, Landable, Turnable{
             }
         }
         else{
-            System.out.println( "Insert landing command");
+            System.out.println("Введите команду приземления.");
         }
     }
 
@@ -118,7 +119,5 @@ public class Rover implements Moveable, Liftable, Landable, Turnable{
         setDir(direction);
         }
 
-    public GroundVisor getVisor() {
-        return visor;
-    }
+
 }

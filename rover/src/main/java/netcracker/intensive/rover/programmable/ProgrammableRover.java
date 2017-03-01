@@ -25,7 +25,6 @@ public class ProgrammableRover extends Rover implements ProgramFileAware {
     public ProgrammableRover(GroundVisor visor, SimpleRoverStatsModule module) {
         super(visor);
         this.module = module;
-
     }
 
     public void executeProgramFile(String path){

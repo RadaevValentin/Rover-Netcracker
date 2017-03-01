@@ -28,7 +28,6 @@ public class RoverProgram {
     {
         public ConfigMapWrapper(Map<String, Object> configMap) {
             super();
-
             for (String key : configMap.keySet()) {
                 super.put(key, configMap.get(key));
             }
